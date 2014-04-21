@@ -1,0 +1,21 @@
+[
+{
+  "modid": "Talismans",
+  "name": "Talismans",
+  "description": "",
+  "version": "Beta 1.0.0",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "gigabit101",
+    "Mj11jM"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
