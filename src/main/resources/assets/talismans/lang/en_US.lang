@@ -1,9 +1,12 @@
 
 # Item localizations
+item.Itemtalisman Talisman.Blank.name=Blank Talisman
 item.Itemtalisman Talisman.Dragon.name=Dragon Talisman
 item.Itemtalisman Talisman.Rabbit.name=Rabbit Talisman
 item.Itemtalisman Talisman.Bull.name=Bull Talisman
 item.Itemtalisman Talisman.Horse.name=Horse Talisman
+item.Itemtalisman Talisman.Fish.name=Fish Talisman
+
 
 
 

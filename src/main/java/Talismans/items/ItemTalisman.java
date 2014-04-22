@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -17,7 +18,7 @@ import baubles.api.IBauble;
 
 public class ItemTalisman extends Item implements IBauble {
 	
-	public static final String[] types = new String[] {"Dragon", "Rabbit", "Bull", "Horse"};
+	public static final String[] types = new String[] {"Blank", "Dragon", "Rabbit", "Bull", "Horse", "Fish"};
 	private IIcon[] textures;
 
 	public ItemTalisman(){
@@ -71,20 +72,45 @@ public class ItemTalisman extends Item implements IBauble {
 				list.add(new ItemStack(item, 1, meta));
 			}
 		}
+		@Override
+		public void addInformation(ItemStack iS, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+			if(iS.getItemDamage() == 0){
+			par3List.add("Can Be Used To Copy Talismans");
+			}
+			if(iS.getItemDamage() == 1){
+				par3List.add("When equiped grants fire immunity");
+			}
+			if(iS.getItemDamage() == 2){
+				par3List.add("When equiped grants the ability to jump high");
+			}
+			if(iS.getItemDamage() == 3){
+				par3List.add("When equiped grants the ability to dig faster");
+			}
+			if(iS.getItemDamage() == 4){
+				par3List.add("When equiped grants the ability to run faster");
+			}
+			if(iS.getItemDamage() == 5){
+				par3List.add("When equiped grants the ability to breath under water");
+			}
+			
+		}
 
 	@Override
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
-		if (itemstack.getItemDamage()==0 && !player.isPotionActive(Potion.fireResistance)){
+		if (itemstack.getItemDamage()==1 && !player.isPotionActive(Potion.fireResistance)){
 			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id,40,0));
 		}
-		if (itemstack.getItemDamage()==1 && !player.isPotionActive(Potion.jump)){
+		if (itemstack.getItemDamage()==2 && !player.isPotionActive(Potion.jump)){
 			player.addPotionEffect(new PotionEffect(Potion.jump.id,40,0));
 		}
-		if (itemstack.getItemDamage()==2 && !player.isPotionActive(Potion.digSpeed)){
+		if (itemstack.getItemDamage()==3 && !player.isPotionActive(Potion.digSpeed)){
 			player.addPotionEffect(new PotionEffect(Potion.digSpeed.id,40,0));
 		}
-		if (itemstack.getItemDamage()==3 && !player.isPotionActive(Potion.moveSpeed)){
+		if (itemstack.getItemDamage()==4 && !player.isPotionActive(Potion.moveSpeed)){
 			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id,40,0));
+		}
+		if (itemstack.getItemDamage()==5 && !player.isPotionActive(Potion.waterBreathing)){
+			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,40,0));
 		}
     }
 
