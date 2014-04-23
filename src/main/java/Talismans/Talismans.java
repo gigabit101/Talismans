@@ -49,9 +49,6 @@ public class Talismans {
 		            EventCloakRender.addIcyCapes();
 
 		        }
-		
-		    
-		
 				
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(ModItems.Talisman),1,1,100));
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(ModItems.Talisman,1 ,1),1,1,8));
