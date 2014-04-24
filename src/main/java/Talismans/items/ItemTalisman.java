@@ -18,7 +18,7 @@ import baubles.api.IBauble;
 
 public class ItemTalisman extends Item implements IBauble {
 	
-	public static final String[] types = new String[] {"Blank", "Dragon", "Rabbit", "Bull", "Horse", "Fish"};
+	public static final String[] types = new String[] {"Blank", "Dragon", "Rabbit", "Bull", "Horse", "Fish", "Bat"};
 	private IIcon[] textures;
 
 	public ItemTalisman(){
@@ -78,19 +78,30 @@ public class ItemTalisman extends Item implements IBauble {
 			par3List.add("Can Be Used To Copy Talismans");
 			}
 			if(iS.getItemDamage() == 1){
-				par3List.add("When equiped grants fire immunity");
+				par3List.add("When equiped grants the ability ");
+				par3List.add("Of Fire Imunity");
 			}
 			if(iS.getItemDamage() == 2){
-				par3List.add("When equiped grants the ability to jump high");
+				par3List.add("When equiped grants the ability");
+				par3List.add("To Jump Higher");
 			}
 			if(iS.getItemDamage() == 3){
-				par3List.add("When equiped grants the ability to dig faster");
+				par3List.add("When equiped grants the ability");
+				par3List.add("To Dig Faster");
 			}
 			if(iS.getItemDamage() == 4){
-				par3List.add("When equiped grants the ability to run faster");
+				par3List.add("When equiped grants the ability");
+				par3List.add("To Run Faster");
 			}
 			if(iS.getItemDamage() == 5){
-				par3List.add("When equiped grants the ability to breath under water");
+				par3List.add("When equiped grants the ability");
+				par3List.add("To breath under water");
+
+			}
+			if(iS.getItemDamage() == 6){
+				par3List.add("When equiped grants the ability");
+				par3List.add("To See In The Dark");
+
 			}
 			
 		}
@@ -111,6 +122,9 @@ public class ItemTalisman extends Item implements IBauble {
 		}
 		if (itemstack.getItemDamage()==5 && !player.isPotionActive(Potion.waterBreathing)){
 			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,40,0));
+		}
+		if (itemstack.getItemDamage()==6 && !player.isPotionActive(Potion.nightVision)){
+			player.addPotionEffect(new PotionEffect(Potion.nightVision.id,999999999,0));
 		}
     }
 

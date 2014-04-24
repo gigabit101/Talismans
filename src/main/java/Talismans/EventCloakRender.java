@@ -24,7 +24,7 @@ public class EventCloakRender {
 	@SideOnly(Side.CLIENT)
 	public static void addCapes() {
     	String capeURL = "https://dl.dropboxusercontent.com/u/27415688/fudgecape.png";
-    	String[] owners = {"Catey98", "Mj11jM", "dexter_bok"};  	
+    	String[] owners = {"Catey98", "Mj11jM", "dexter_bok", "timebombtech"};  	
     	ThreadDownloadImageData image = new ThreadDownloadImageData(capeURL, null, null);
     	
     	for(String username : owners)
