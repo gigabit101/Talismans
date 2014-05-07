@@ -10,7 +10,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class EventCloakRender {
 	@SideOnly(Side.CLIENT)
 	public static void addDevCapes() {
-    	String capeURL = "https://dl.dropboxusercontent.com/s/sns1n9za10xoutx/Gigcape.png";
+    	String capeURL = "https://dl.dropboxusercontent.com/s/l2690eor7dy9ut5/Gigcape.png";
     	String[] owners = {"Gigabit101"};  	
     	ThreadDownloadImageData image = new ThreadDownloadImageData(capeURL, null, null);
     	

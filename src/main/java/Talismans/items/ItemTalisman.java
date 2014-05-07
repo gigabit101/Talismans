@@ -124,7 +124,7 @@ public class ItemTalisman extends Item implements IBauble {
 			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,40,0));
 		}
 		if (itemstack.getItemDamage()==6 && !player.isPotionActive(Potion.nightVision)){
-			player.addPotionEffect(new PotionEffect(Potion.nightVision.id,999999999,0));
+			player.addPotionEffect(new PotionEffect(Potion.nightVision.id,40,0));
 		}
     }
 
