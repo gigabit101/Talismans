@@ -2,16 +2,16 @@
 {
   "modid": "Talismans",
   "name": "Talismans",
-  "description": "",
-  "version": "1.0.10",
-  "url": "",
+  "description": "Add Talismans that give you buffs when equipped ",
+  "version": "1.0.11",
+  "url": "http://gigabit101.co.uk/mods/talismans/",
   "updateUrl": "",
   "authorList": [
-    "gigabit101",
-    "Mj11jM"
+    "gigabit101"
+    
   ],
-  "credits": "",
-  "logoFile": "",
+  "credits": "Nexans For the awesome Textures",
+  "logoFile": "/assets/talismans/textures/logo/logo.png",
   "screenshots": [
   ],
   "parent":"",
