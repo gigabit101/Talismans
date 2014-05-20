@@ -18,8 +18,11 @@ import Talismans.Talismans;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 
+/**
+ * @author Gigabit101
+ */
 public class ItemTalisman extends Item implements IBauble {
-	
+	//Names For Talismans Depending on Meta Data
 	public static final String[] types = new String[] {"Blank", "Dragon", "Rabbit", "Bull", "Horse", "Fish", "Bat", "Cameleon"};
 	private IIcon[] textures;
 
@@ -32,11 +35,13 @@ public class ItemTalisman extends Item implements IBauble {
 	}
 
 	@Override
+	//Tells Baubles What slot Talismans Can Be Equiped To
 	public BaubleType getBaubleType(ItemStack itemstack) {
 		return BaubleType.AMULET;
 	}
 	
 	@Override
+	//Registers Textures For All Talismans 
 	public void registerIcons(IIconRegister iconRegister)
 	{
 		textures = new IIcon[types.length];
@@ -47,6 +52,7 @@ public class ItemTalisman extends Item implements IBauble {
 	}
 	
 	@Override
+	//Adds Texture what match's meta data
 	public IIcon getIconFromDamage(int meta)
 	{
 		if (meta < 0 || meta >= textures.length) {
@@ -57,6 +63,7 @@ public class ItemTalisman extends Item implements IBauble {
 	}
 		
 	@Override
+	//gets Unlocalized Name depending on meta data
 	public String getUnlocalizedName(ItemStack itemStack)
 	{
 		int meta = itemStack.getItemDamage();
@@ -66,7 +73,7 @@ public class ItemTalisman extends Item implements IBauble {
 
 		return super.getUnlocalizedName() + "." + types[meta];
 	}
-	
+	//Adds Talismans SubItems To Creative Tab
 	   public void getSubItems(Item item, CreativeTabs creativeTabs, List list)
 		{
 			for (int meta = 0; meta < types.length; ++meta) 
@@ -120,6 +127,7 @@ public class ItemTalisman extends Item implements IBauble {
 		}
 
 	@Override
+	//Tells What Potion Effect to return On Tick
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
 		if (itemstack.getItemDamage()==1 && !player.isPotionActive(Potion.fireResistance)){
 			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id,20,2));
@@ -151,11 +159,13 @@ public class ItemTalisman extends Item implements IBauble {
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {}
 
 	@Override
+	//Player can Equip Talismans
 	public boolean canEquip(ItemStack itemstack, EntityLivingBase player) {
 		return true;
 	}
 
 	@Override
+	//Player can UnEquip Talismans 
 	public boolean canUnequip(ItemStack itemstack, EntityLivingBase player) {
 		return true;
 	}

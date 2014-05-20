@@ -1,5 +1,7 @@
 package Talismans.lib;
-
+/**
+ * @author Gigabit101
+ */
 public class Modinfo {
 	
 	public static final String ID = "Talismans";
