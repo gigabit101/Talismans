@@ -13,6 +13,7 @@ import Talismans.config.TalismanConfig;
 import Talismans.crafting.CraftingManager;
 import Talismans.creativeTab.CreativeTabTalismans;
 import Talismans.event.EventCloakRender;
+import Talismans.gui.GuiHandler;
 import Talismans.init.DungeonLoot;
 import Talismans.init.ModBlocks;
 import Talismans.init.ModItems;
@@ -26,6 +27,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 /**
@@ -71,6 +73,9 @@ public class Talismans {
 				//Adds Talismans To DungeonLoot
 		        DungeonLoot.registerDungeonLoot(properties);
 		        ModBlocks.init();
+		        ModBlocks.registerTileEntitys();
+				NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+
 	}
 	
 	@EventHandler

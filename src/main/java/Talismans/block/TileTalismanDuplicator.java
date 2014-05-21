@@ -1,0 +1,82 @@
+package Talismans.block;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+
+public class TileTalismanDuplicator extends TileEntity implements IInventory{
+
+	public int FUEL_INVENTORY_INDEX;
+	public int INPUT_INVENTORY_INDEX;
+	public int DUST_INVENTORY_INDEX;
+	public Object OUTPUT_INVENTORY_INDEX;
+
+	@Override
+	public int getSizeInventory() {
+		return 2;
+	}
+
+	@Override
+	public ItemStack getStackInSlot(int var1) {
+		return null;
+	}
+
+	@Override
+	public ItemStack decrStackSize(int var1, int var2) {
+		return null;
+	}
+
+	@Override
+	public ItemStack getStackInSlotOnClosing(int var1) {
+		return null;
+	}
+
+	@Override
+	public void setInventorySlotContents(int var1, ItemStack var2) {		
+	}
+
+	@Override
+	public String getInventoryName() {
+		return null;
+	}
+
+	@Override
+	public boolean hasCustomInventoryName() {
+		return false;
+	}
+
+	@Override
+	public int getInventoryStackLimit() {
+		return 64;
+	}
+
+	@Override
+	public boolean isUseableByPlayer(EntityPlayer var1) {
+		return false;
+	}
+
+	@Override
+	public void openInventory() {		
+	}
+
+	@Override
+	public void closeInventory() {		
+	}
+
+	@Override
+	public boolean isItemValidForSlot(int var1, ItemStack var2) {
+		return true;
+	}
+
+	public void openChest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void closeChest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
