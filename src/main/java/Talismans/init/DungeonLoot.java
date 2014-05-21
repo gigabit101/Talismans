@@ -1,5 +1,6 @@
 package Talismans.init;
 
+import Talismans.config.TalismanConfig;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
@@ -8,7 +9,8 @@ import net.minecraftforge.common.ChestGenHooks;
  */
 public class DungeonLoot {
 	
-	public static void initDungeonLoot(){
+	public static void registerDungeonLoot(TalismanConfig properties){
+		if (properties.DungeonLootAllowed){
 		// Adds Talismans To Village DungeonLoot
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(ModItems.Talisman),1,1,80));
 		ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(ModItems.Talisman,1 ,1),1,1,8));
@@ -62,4 +64,6 @@ public class DungeonLoot {
 	}
 	
 
+	}
+	
 }

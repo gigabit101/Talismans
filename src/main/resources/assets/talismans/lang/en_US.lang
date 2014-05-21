@@ -15,6 +15,7 @@ item.Itemtalisman Talisman.Cameleon.name=Cameleon Talisman
 
 
 # Block localizations
+tile.Blocktalismans TalismansDupe.name= Talisman Duplicator
 
 
 # GUI localizations

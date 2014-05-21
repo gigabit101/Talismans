@@ -1,5 +1,6 @@
 package Talismans.init;
 
+import Talismans.config.TalismanConfig;
 import Talismans.items.ItemTalisman;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
@@ -20,7 +21,8 @@ public class ModItems {
 		GameRegistry.registerItem(Talisman, "Talisman");
 	
 	}
-	public static void initItemRecipes(){
+	
+	public static void CopyingTalismans(){
 		//Adds Recipes To Talismans
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 1), new Object[] {new ItemStack(ModItems.Talisman,1,1), ModItems.Talisman});
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 2), new Object[] {new ItemStack(ModItems.Talisman,1,2), ModItems.Talisman});
@@ -28,9 +30,7 @@ public class ModItems {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 4), new Object[] {new ItemStack(ModItems.Talisman,1,4), ModItems.Talisman});
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 5), new Object[] {new ItemStack(ModItems.Talisman,1,5), ModItems.Talisman});
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 6), new Object[] {new ItemStack(ModItems.Talisman,1,6), ModItems.Talisman});
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 7), new Object[] {new ItemStack(ModItems.Talisman,1,7), ModItems.Talisman});
-
-		
-      }
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 7), new Object[] {new ItemStack(ModItems.Talisman,1,7), ModItems.Talisman});	
+	}
 	
 }

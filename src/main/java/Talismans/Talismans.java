@@ -1,14 +1,20 @@
 package Talismans;
 
+import java.io.File;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DungeonHooks;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
+import Talismans.config.TalismanConfig;
+import Talismans.crafting.CraftingManager;
 import Talismans.creativeTab.CreativeTabTalismans;
 import Talismans.event.EventCloakRender;
 import Talismans.init.DungeonLoot;
+import Talismans.init.ModBlocks;
 import Talismans.init.ModItems;
 import Talismans.lib.Modinfo;
 import Talismans.proxies.ClientProxy;
@@ -27,7 +33,8 @@ import cpw.mods.fml.relauncher.Side;
  */
 @Mod(modid = Modinfo.ID, name = Modinfo.NAME, version = Modinfo.Version, dependencies = "required-after:Baubles@")
 public class Talismans {
-	
+	public static TalismanConfig properties;
+
 	@Instance(Modinfo.ID)
 	public static Talismans instance;
 	
@@ -38,7 +45,12 @@ public class Talismans {
 			CreativeTabs.getNextID(), Modinfo.NAME);
 	
 	@EventHandler
-	public void preinit(FMLPreInitializationEvent event){		
+	public void preinit(FMLPreInitializationEvent event){
+		instance = this;
+		//This should be the FIRST thing that gets done.
+		String path = event.getSuggestedConfigurationFile().getAbsolutePath().replace(Modinfo.ID, "Talismans");
+
+		properties = TalismanConfig.initialize(new File(path));
 		//Loads Talismans Items 	 
 		ModItems.init();
 	}
@@ -54,10 +66,11 @@ public class Talismans {
 		            EventCloakRender.addIcyCapes();
 
 		        }
-	    //Loads Talismans Recipes
-		ModItems.initItemRecipes();
-		//Adds Talismans To DungeonLoot
-		DungeonLoot.initDungeonLoot();
+		        //Allows Talismans To Be Copyed
+		        CraftingManager.registerRecipes(properties);
+				//Adds Talismans To DungeonLoot
+		        DungeonLoot.registerDungeonLoot(properties);
+		        ModBlocks.init();
 	}
 	
 	@EventHandler
