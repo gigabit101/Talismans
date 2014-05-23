@@ -23,7 +23,7 @@ import baubles.api.IBauble;
  */
 public class ItemTalisman extends Item implements IBauble {
 	//Names For Talismans Depending on Meta Data
-	public static final String[] types = new String[] {"Blank", "Dragon", "Rabbit", "Bull", "Horse", "Fish", "Bat", "Cameleon"};
+	public static final String[] types = new String[] {"Blank", "Dragon", "Rabbit", "Bull", "Horse", "Fish", "Bat", "Cameleon", "Witherless"};
 	private IIcon[] textures;
 
 	public ItemTalisman(){
@@ -118,10 +118,14 @@ public class ItemTalisman extends Item implements IBauble {
 				par3List.add("To See In The Dark");
 
 			}
-			if(iS.getItemDamage() == 6){
+			if(iS.getItemDamage() == 7){
 				par3List.add("When equiped grants the ability");
 				par3List.add("To Become Invisable");
 
+			}
+			if(iS.getItemDamage() == 8){
+				par3List.add("When equiped grants the ability");
+				par3List.add("Of Not Being affected by the withering effect");
 			}
 			
 		}
@@ -150,6 +154,11 @@ public class ItemTalisman extends Item implements IBauble {
 		if (itemstack.getItemDamage()==7 && !player.isPotionActive(Potion.invisibility)){
 			player.addPotionEffect(new PotionEffect(Potion.invisibility.id,20,0));
 		}
+		if (itemstack.getItemDamage()==8 & !player.isPotionActive(Potion.wither)){
+			player.addPotionEffect(new PotionEffect(Potion.regeneration.id,20,0));
+		}
+
+		
     }
 
 	@Override

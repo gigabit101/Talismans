@@ -20,7 +20,7 @@ public class CraftingManager {
 			GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 5), new Object[] {new ItemStack(ModItems.Talisman,1,5), ModItems.Talisman});
 			GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 6), new Object[] {new ItemStack(ModItems.Talisman,1,6), ModItems.Talisman});
 			GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 7), new Object[] {new ItemStack(ModItems.Talisman,1,7), ModItems.Talisman});
-			System.out.print("loading CopyingTalismans");
+//DEBUG CODE			System.out.print("loading CopyingTalismans");
 			
 		}
 

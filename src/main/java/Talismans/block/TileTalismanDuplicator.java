@@ -11,7 +11,7 @@ public class TileTalismanDuplicator extends TileEntity implements IInventory{
 	public int INPUT_INVENTORY_INDEX;
 	public int DUST_INVENTORY_INDEX;
 	public Object OUTPUT_INVENTORY_INDEX;
-
+//                              ToDo        Not Finished 
 	@Override
 	public int getSizeInventory() {
 		return 2;
@@ -69,14 +69,10 @@ public class TileTalismanDuplicator extends TileEntity implements IInventory{
 		return true;
 	}
 
-	public void openChest() {
-		// TODO Auto-generated method stub
-		
+	public void openChest() {		
 	}
 
-	public void closeChest() {
-		// TODO Auto-generated method stub
-		
+	public void closeChest() {		
 	}
 
 }

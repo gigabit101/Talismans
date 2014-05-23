@@ -63,8 +63,11 @@ public class Talismans {
 		        if (event.getSide() == Side.CLIENT)
 		        {
 		            MinecraftForge.EVENT_BUS.register(new EventCloakRender());
+		            //Adds Dev Capes
 		            EventCloakRender.addDevCapes();
+		            //Adds Donator Capes
 		            EventCloakRender.addCapes();
+		            //Adds Icys Cape
 		            EventCloakRender.addIcyCapes();
 
 		        }
@@ -72,8 +75,11 @@ public class Talismans {
 		        CraftingManager.registerRecipes(properties);
 				//Adds Talismans To DungeonLoot
 		        DungeonLoot.registerDungeonLoot(properties);
+		        //Adds Modblocks
 		        ModBlocks.init();
+		        //Adds TileEntitys
 		        ModBlocks.registerTileEntitys();
+		        //Registers Gui Handler
 				NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 
 	}
