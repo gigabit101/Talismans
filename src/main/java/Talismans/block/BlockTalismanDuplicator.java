@@ -19,29 +19,31 @@ public class BlockTalismanDuplicator extends BlockContainer {
 		this.setCreativeTab(Talismans.tabsTalismans);
 		this.setHardness(2F);
 		this.setStepSound(Block.soundTypeStone);
-		this.setBlockName("Blocktalismans TalismansDupe");			
+		this.setBlockName("Blocktalismans TalismansDupe");
 	}
+
 	@Override
-	//Registers Texture For TalismanDuplicator
-	public void registerBlockIcons(IIconRegister iconRegister)
-	{
+	// Registers Texture For TalismanDuplicator
+	public void registerBlockIcons(IIconRegister iconRegister) {
 		this.blockIcon = iconRegister.registerIcon("talismans:talismanDupe");
 	}
 
 	@Override
-	//Creates TileEntity For TalismanDuplicator
+	// Creates TileEntity For TalismanDuplicator
 	public TileEntity createNewTileEntity(World var1, int var2) {
 		return new TileTalismanDuplicator();
 	}
-	//Loads GUI On Right Click
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entity, int side, float hitX, float hitY, float hitZ) {
+
+	// Loads GUI On Right Click
+	public boolean onBlockActivated(World world, int x, int y, int z,
+			EntityPlayer entity, int side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
-			FMLNetworkHandler.openGui(entity, Talismans.instance, 0, world, x, y, z);
+			FMLNetworkHandler.openGui(entity, Talismans.instance, 0, world, x,
+					y, z);
 
 		}
 
 		return true;
 	}
-	
 
 }

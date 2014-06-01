@@ -5,13 +5,14 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileTalismanDuplicator extends TileEntity implements IInventory{
+public class TileTalismanDuplicator extends TileEntity implements IInventory {
 
 	public int FUEL_INVENTORY_INDEX;
 	public int INPUT_INVENTORY_INDEX;
 	public int DUST_INVENTORY_INDEX;
 	public Object OUTPUT_INVENTORY_INDEX;
-//                              ToDo        Not Finished 
+
+	// ToDo Not Finished
 	@Override
 	public int getSizeInventory() {
 		return 2;
@@ -33,7 +34,7 @@ public class TileTalismanDuplicator extends TileEntity implements IInventory{
 	}
 
 	@Override
-	public void setInventorySlotContents(int var1, ItemStack var2) {		
+	public void setInventorySlotContents(int var1, ItemStack var2) {
 	}
 
 	@Override
@@ -57,11 +58,11 @@ public class TileTalismanDuplicator extends TileEntity implements IInventory{
 	}
 
 	@Override
-	public void openInventory() {		
+	public void openInventory() {
 	}
 
 	@Override
-	public void closeInventory() {		
+	public void closeInventory() {
 	}
 
 	@Override
@@ -69,10 +70,10 @@ public class TileTalismanDuplicator extends TileEntity implements IInventory{
 		return true;
 	}
 
-	public void openChest() {		
+	public void openChest() {
 	}
 
-	public void closeChest() {		
+	public void closeChest() {
 	}
 
 }

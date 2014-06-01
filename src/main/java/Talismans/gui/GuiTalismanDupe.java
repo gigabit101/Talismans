@@ -12,14 +12,16 @@ import Talismans.container.ContainerTalismanDuplicator;
 
 public class GuiTalismanDupe extends GuiContainer {
 
-	public static final ResourceLocation texture = new ResourceLocation("talismans", "textures/gui/talismanDupe.png");
+	public static final ResourceLocation texture = new ResourceLocation(
+			"talismans", "textures/gui/talismanDupe.png");
 	public TileTalismanDuplicator tile;
 
-	public GuiTalismanDupe(InventoryPlayer inventoryPlayer, TileTalismanDuplicator entity) {
+	public GuiTalismanDupe(InventoryPlayer inventoryPlayer,
+			TileTalismanDuplicator entity) {
 		super(new ContainerTalismanDuplicator(inventoryPlayer, entity));
 		this.tile = entity;
 		xSize = 176;
-        ySize = 187;
+		ySize = 187;
 	}
 
 	@Override
@@ -30,9 +32,11 @@ public class GuiTalismanDupe extends GuiContainer {
 	public void drawGuiContainerBackgroundLayer(float f, int i, int j) {
 		GL11.glColor4f(1F, 1F, 1F, 1F);
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
-		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);	
+		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 		double w = 48;
-	}{
+	}
 
-}
+	{
+
+	}
 }

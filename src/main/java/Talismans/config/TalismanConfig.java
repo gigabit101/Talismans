@@ -13,29 +13,33 @@ public class TalismanConfig {
 	public final boolean CopyingTalismansAllowed;
 	public final boolean DungeonLootAllowed;
 
-	private TalismanConfig(File configFile){
+	private TalismanConfig(File configFile) {
 		Configuration config = new Configuration(configFile);
 		config.load();
-		CopyingTalismansAllowed = config.get(CATEGORY_CRAFTING, "Allow Copying Talismans", true).getBoolean(true);
-		DungeonLootAllowed = config.get(CATEGORY_LOOT, "Makes Talismans Dungeon Loot", true).getBoolean(true);
+		CopyingTalismansAllowed = config.get(CATEGORY_CRAFTING,
+				"Allow Copying Talismans", true).getBoolean(true);
+		DungeonLootAllowed = config.get(CATEGORY_LOOT,
+				"Makes Talismans Dungeon Loot", true).getBoolean(true);
 		config.save();
-		
-		
+
 	}
-	public static TalismanConfig initialize(File configFile){
-		
+
+	public static TalismanConfig initialize(File configFile) {
+
 		if (instance == null)
 			instance = new TalismanConfig(configFile);
 		else
-			throw new IllegalStateException("Cannot initialize TalismanConfig twice");
+			throw new IllegalStateException(
+					"Cannot initialize TalismanConfig twice");
 
 		return instance;
 	}
 
-	public static TalismanConfig instance(){
-		if (instance == null){
-			
-			throw new IllegalStateException("Instance of TalismanConfig requested before initialization");
+	public static TalismanConfig instance() {
+		if (instance == null) {
+
+			throw new IllegalStateException(
+					"Instance of TalismanConfig requested before initialization");
 		}
 		return instance;
 	}

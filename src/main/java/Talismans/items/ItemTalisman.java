@@ -22,50 +22,49 @@ import baubles.api.IBauble;
  * @author Gigabit101
  */
 public class ItemTalisman extends Item implements IBauble {
-	//Names For Talismans Depending on Meta Data
-	public static final String[] types = new String[] {"Blank", "Dragon", "Rabbit", "Bull", "Horse", "Fish", "Bat", "Cameleon", "Witherless"};
+	// Names For Talismans Depending on Meta Data
+	public static final String[] types = new String[] { "Blank", "Dragon",
+			"Rabbit", "Bull", "Horse", "Fish", "Bat", "Cameleon", "Witherless" };
+	private static final int par7 = 0;
 	private IIcon[] textures;
 
-	public ItemTalisman(){
+	public ItemTalisman() {
 		super();
 		setHasSubtypes(true);
 		this.setCreativeTab(Talismans.tabsTalismans);
 		this.setUnlocalizedName("Itemtalisman Talisman");
-		maxStackSize = 1;	
+		maxStackSize = 1;
 	}
 
 	@Override
-	//Tells Baubles What slot Talismans Can Be Equiped To
+	// Tells Baubles What slot Talismans Can Be Equiped To
 	public BaubleType getBaubleType(ItemStack itemstack) {
 		return BaubleType.AMULET;
 	}
-	
+
 	@Override
-	//Registers Textures For All Talismans 
-	public void registerIcons(IIconRegister iconRegister)
-	{
+	// Registers Textures For All Talismans
+	public void registerIcons(IIconRegister iconRegister) {
 		textures = new IIcon[types.length];
 
 		for (int i = 0; i < types.length; ++i) {
-			textures[i] = iconRegister.registerIcon("talismans:"+types[i]);
+			textures[i] = iconRegister.registerIcon("talismans:" + types[i]);
 		}
 	}
-	
+
 	@Override
-	//Adds Texture what match's meta data
-	public IIcon getIconFromDamage(int meta)
-	{
+	// Adds Texture what match's meta data
+	public IIcon getIconFromDamage(int meta) {
 		if (meta < 0 || meta >= textures.length) {
 			meta = 0;
 		}
 
 		return textures[meta];
 	}
-		
+
 	@Override
-	//gets Unlocalized Name depending on meta data
-	public String getUnlocalizedName(ItemStack itemStack)
-	{
+	// gets Unlocalized Name depending on meta data
+	public String getUnlocalizedName(ItemStack itemStack) {
 		int meta = itemStack.getItemDamage();
 		if (meta < 0 || meta >= types.length) {
 			meta = 0;
@@ -73,110 +72,126 @@ public class ItemTalisman extends Item implements IBauble {
 
 		return super.getUnlocalizedName() + "." + types[meta];
 	}
-	//Adds Talismans SubItems To Creative Tab
-	   public void getSubItems(Item item, CreativeTabs creativeTabs, List list)
-		{
-			for (int meta = 0; meta < types.length; ++meta) 
-			{
-				list.add(new ItemStack(item, 1, meta));
-			}
+
+	// Adds Talismans SubItems To Creative Tab
+	public void getSubItems(Item item, CreativeTabs creativeTabs, List list) {
+		for (int meta = 0; meta < types.length; ++meta) {
+			list.add(new ItemStack(item, 1, meta));
 		}
-	   //Makes Items Name Blue 
-	   @Override
-		public EnumRarity getRarity(ItemStack par1ItemStack) {
-			return EnumRarity.rare;
-		}
-	   //Adds Tooltips to Items
-		@Override
-		public void addInformation(ItemStack iS, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-			if(iS.getItemDamage() == 0){
+	}
+
+	// Makes Items Name Blue
+	@Override
+	public EnumRarity getRarity(ItemStack par1ItemStack) {
+		return EnumRarity.rare;
+	}
+
+	// Adds Tooltips to Items
+	@Override
+	public void addInformation(ItemStack iS, EntityPlayer par2EntityPlayer,
+			List par3List, boolean par4) {
+		if (iS.getItemDamage() == 0) {
 			par3List.add("Can Be Used To Copy Talismans");
-			}
-			if(iS.getItemDamage() == 1){
-				par3List.add("When equiped grants the ability ");
-				par3List.add("Of Fire Imunity");
-			}
-			if(iS.getItemDamage() == 2){
-				par3List.add("When equiped grants the ability");
-				par3List.add("To Jump Higher");
-			}
-			if(iS.getItemDamage() == 3){
-				par3List.add("When equiped grants the ability");
-				par3List.add("To Dig Faster");
-			}
-			if(iS.getItemDamage() == 4){
-				par3List.add("When equiped grants the ability");
-				par3List.add("To Run Faster");
-			}
-			if(iS.getItemDamage() == 5){
-				par3List.add("When equiped grants the ability");
-				par3List.add("To breath under water");
+		}
+		if (iS.getItemDamage() == 1) {
+			par3List.add("When equiped grants the ability ");
+			par3List.add("Of Fire Imunity");
+		}
+		if (iS.getItemDamage() == 2) {
+			par3List.add("When equiped grants the ability");
+			par3List.add("To Jump Higher");
+		}
+		if (iS.getItemDamage() == 3) {
+			par3List.add("When equiped grants the ability");
+			par3List.add("To Dig Faster");
+		}
+		if (iS.getItemDamage() == 4) {
+			par3List.add("When equiped grants the ability");
+			par3List.add("To Run Faster");
+		}
+		if (iS.getItemDamage() == 5) {
+			par3List.add("When equiped grants the ability");
+			par3List.add("To breath under water");
 
-			}
-			if(iS.getItemDamage() == 6){
-				par3List.add("When equiped grants the ability");
-				par3List.add("To See In The Dark");
+		}
+		if (iS.getItemDamage() == 6) {
+			par3List.add("When equiped grants the ability");
+			par3List.add("To See In The Dark");
 
-			}
-			if(iS.getItemDamage() == 7){
-				par3List.add("When equiped grants the ability");
-				par3List.add("To Become Invisable");
+		}
+		if (iS.getItemDamage() == 7) {
+			par3List.add("When equiped grants the ability");
+			par3List.add("To Become Invisable");
 
-			}
-			if(iS.getItemDamage() == 8){
-				par3List.add("When equiped grants the ability");
-				par3List.add("Of Not Being affected by the withering effect");
-			}
-			
+		}
+		if (iS.getItemDamage() == 8) {
+			par3List.add("When equiped grants the ability");
+			par3List.add("Of Not Being affected by the withering effect");
 		}
 
+	}
+
 	@Override
-	//Tells What Potion Effect to return On Tick
+	// Tells What Potion Effect to return On Tick
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
-		if (itemstack.getItemDamage()==1 && !player.isPotionActive(Potion.fireResistance)){
-			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id,20,2));
+		if (itemstack.getItemDamage() == 1
+				&& !player.isPotionActive(Potion.fireResistance)) {
+			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id,
+					20, 2));
 		}
-		if (itemstack.getItemDamage()==2 && !player.isPotionActive(Potion.jump)){
-			player.addPotionEffect(new PotionEffect(Potion.jump.id,20,1));
+		if (itemstack.getItemDamage() == 2
+				&& !player.isPotionActive(Potion.jump)) {
+			player.addPotionEffect(new PotionEffect(Potion.jump.id, 20, 1));
 		}
-		if (itemstack.getItemDamage()==3 && !player.isPotionActive(Potion.digSpeed)){
-			player.addPotionEffect(new PotionEffect(Potion.digSpeed.id,20,2));
+		if (itemstack.getItemDamage() == 3
+				&& !player.isPotionActive(Potion.digSpeed)) {
+			player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, 20, 2));
 		}
-		if (itemstack.getItemDamage()==4 && !player.isPotionActive(Potion.moveSpeed)){
-			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id,20,2));
+		if (itemstack.getItemDamage() == 4
+				&& !player.isPotionActive(Potion.moveSpeed)) {
+			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 20, 2));
 		}
-		if (itemstack.getItemDamage()==5 && !player.isPotionActive(Potion.waterBreathing)){
-			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,20,0));
+		if (itemstack.getItemDamage() == 5
+				&& !player.isPotionActive(Potion.waterBreathing)) {
+			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,
+					20, 0));
 		}
-		if (itemstack.getItemDamage()==6 && !player.isPotionActive(Potion.nightVision)){
-			player.addPotionEffect(new PotionEffect(Potion.nightVision.id,20,0));
+		if (itemstack.getItemDamage() == 6
+				&& !player.isPotionActive(Potion.nightVision)) {
+			player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 20,
+					0));
 		}
-		if (itemstack.getItemDamage()==7 && !player.isPotionActive(Potion.invisibility)){
-			player.addPotionEffect(new PotionEffect(Potion.invisibility.id,20,0));
+		if (itemstack.getItemDamage() == 7
+				&& !player.isPotionActive(Potion.invisibility)) {
+			player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 20,
+					0));
 		}
-		if (itemstack.getItemDamage()==8 & !player.isPotionActive(Potion.wither)){
-			player.addPotionEffect(new PotionEffect(Potion.regeneration.id,20,0));
+		if (itemstack.getItemDamage() == 8
+				& !player.isPotionActive(Potion.wither)) {
+			player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 20,
+					0));
 		}
 
-		
-    }
+	}
 
 	@Override
-	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {}
+	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
+	}
 
 	@Override
-	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {}
+	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
+	}
 
 	@Override
-	//Player can Equip Talismans
+	// Player can Equip Talismans
 	public boolean canEquip(ItemStack itemstack, EntityLivingBase player) {
 		return true;
 	}
 
 	@Override
-	//Player can UnEquip Talismans 
+	// Player can UnEquip Talismans
 	public boolean canUnequip(ItemStack itemstack, EntityLivingBase player) {
 		return true;
 	}
-	
+
 }
