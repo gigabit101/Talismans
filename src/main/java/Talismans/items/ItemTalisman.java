@@ -168,8 +168,7 @@ public class ItemTalisman extends Item implements IBauble {
 		}
 		if (itemstack.getItemDamage() == 8
 				& !player.isPotionActive(Potion.wither)) {
-			player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 20,
-					0));
+			player.curePotionEffects(null);
 		}
 
 	}
