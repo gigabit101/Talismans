@@ -33,7 +33,7 @@ import cpw.mods.fml.relauncher.Side;
 /**
  * @author Gigabit101
  */
-@Mod(modid = Modinfo.ID, name = Modinfo.NAME, version = Modinfo.Version, dependencies = "required-after:Baubles@")
+@Mod(modid = Modinfo.ID, name = Modinfo.NAME, version = Modinfo.Version, dependencies = "required-after:Baubles@,GbLib@")
 public class Talismans {
 	public static TalismanConfig properties;
 
