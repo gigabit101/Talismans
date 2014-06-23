@@ -24,7 +24,7 @@ import baubles.api.IBauble;
 public class ItemTalisman extends Item implements IBauble {
 	// Names For Talismans Depending on Meta Data
 	public static final String[] types = new String[] { "Blank", "Dragon",
-			"Rabbit", "Bull", "Horse", "Fish", "Bat", "Cameleon", "Witherless" };
+			"Rabbit", "Bull", "Horse", "Fish", "Bat", "Cameleon", "Cow", "Icy" };
 	private static final int par7 = 0;
 	private IIcon[] textures;
 
@@ -128,57 +128,83 @@ public class ItemTalisman extends Item implements IBauble {
 			par3List.add("When equiped grants the ability");
 			par3List.add("Of Not Being affected by the withering effect");
 		}
+		if (iS.getItemDamage() == 9) {
+			par3List.add("When equiped grants the ability");
+			par3List.add("Of Having A beard like Icys");
+		}
 
 	}
 
 	@Override
-	// Tells What Potion Effect to return On Tick
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
+	}
+
+	@Override
+	// Tells What Potion Effect to return
+	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
+		
 		if (itemstack.getItemDamage() == 1
 				&& !player.isPotionActive(Potion.fireResistance)) {
 			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id,
-					20, 2));
+					Integer.MAX_VALUE, 1, true));
+		    }
+			if (itemstack.getItemDamage() == 2
+					&& !player.isPotionActive(Potion.jump)) {
+				player.addPotionEffect(new PotionEffect(Potion.jump.id, Integer.MAX_VALUE, 1, true));
+			}
+			if (itemstack.getItemDamage() == 3
+					&& !player.isPotionActive(Potion.digSpeed)) {
+				player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, Integer.MAX_VALUE, 1, true));
+			}
+			if (itemstack.getItemDamage() == 4
+					&& !player.isPotionActive(Potion.moveSpeed)) {
+				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, Integer.MAX_VALUE, 1, true));
+			}
+			if (itemstack.getItemDamage() == 5
+					&& !player.isPotionActive(Potion.waterBreathing)) {
+				player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,
+						Integer.MAX_VALUE, 1, true));
+			}
+			if (itemstack.getItemDamage() == 6
+					&& !player.isPotionActive(Potion.nightVision)) {
+				player.addPotionEffect(new PotionEffect(Potion.nightVision.id, Integer.MAX_VALUE, 1, true));
+			}
+			if (itemstack.getItemDamage() == 7
+					&& !player.isPotionActive(Potion.invisibility)) {
+				player.addPotionEffect(new PotionEffect(Potion.invisibility.id, Integer.MAX_VALUE, 1, true));
+			}
+			if (itemstack.getItemDamage() == 8
+					& !player.isPotionActive(Potion.wither)) {
+				player.removePotionEffect(Potion.wither.id);
+			}
+			if (itemstack.getItemDamage() == 9
+					&& !player.isPotionActive(Potion.waterBreathing)) {
+				player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, Integer.MAX_VALUE, 1, true));
+				player.addPotionEffect(new PotionEffect(Potion.nightVision.id, Integer.MAX_VALUE, 1, true));
+			}
 		}
-		if (itemstack.getItemDamage() == 2
-				&& !player.isPotionActive(Potion.jump)) {
-			player.addPotionEffect(new PotionEffect(Potion.jump.id, 20, 1));
-		}
-		if (itemstack.getItemDamage() == 3
-				&& !player.isPotionActive(Potion.digSpeed)) {
-			player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, 20, 2));
-		}
-		if (itemstack.getItemDamage() == 4
-				&& !player.isPotionActive(Potion.moveSpeed)) {
-			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 20, 2));
-		}
-		if (itemstack.getItemDamage() == 5
-				&& !player.isPotionActive(Potion.waterBreathing)) {
-			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,
-					20, 0));
-		}
-		if (itemstack.getItemDamage() == 6
-				&& !player.isPotionActive(Potion.nightVision)) {
-			player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 20,
-					0));
-		}
-		if (itemstack.getItemDamage() == 7
-				&& !player.isPotionActive(Potion.invisibility)) {
-			player.addPotionEffect(new PotionEffect(Potion.invisibility.id, 20,
-					0));
-		}
-		if (itemstack.getItemDamage() == 8
-				& !player.isPotionActive(Potion.wither)) {
-			player.curePotionEffects(null);
-		}
-
-	}
+	
 
 	@Override
-	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
-	}
-
-	@Override
+	// Removes Potion effect on Unequip 
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
+		if (itemstack.getItemDamage() == 1)
+		 player.removePotionEffect(Potion.fireResistance.id);
+		if (itemstack.getItemDamage() == 2)
+        player.removePotionEffect(Potion.jump.id);
+		if (itemstack.getItemDamage() == 3)
+     	player.removePotionEffect(Potion.digSpeed.id);
+		if (itemstack.getItemDamage() == 4)
+		player.removePotionEffect(Potion.moveSpeed.id);
+		if (itemstack.getItemDamage() == 5)
+		player.removePotionEffect(Potion.waterBreathing.id);
+		if (itemstack.getItemDamage() == 6)
+		player.removePotionEffect(Potion.nightVision.id);
+		if (itemstack.getItemDamage() == 7)
+		player.removePotionEffect(Potion.invisibility.id);
+		if (itemstack.getItemDamage() == 9)
+			player.removePotionEffect(Potion.waterBreathing.id);
+		    player.removePotionEffect(Potion.nightVision.id);
 	}
 
 	@Override
