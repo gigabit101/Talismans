@@ -24,7 +24,8 @@ import baubles.api.IBauble;
 public class ItemTalisman extends Item implements IBauble {
 	// Names For Talismans Depending on Meta Data
 	public static final String[] types = new String[] { "Blank", "Dragon",
-			"Rabbit", "Bull", "Horse", "Fish", "Bat", "Cameleon", "Cow", "Icy" };
+			"Rabbit", "Bull", "Horse", "Fish", "Bat", "Chameleon", "Cow", "Icy" };
+	
 	private static final int par7 = 0;
 	private IIcon[] textures;
 
