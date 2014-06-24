@@ -12,7 +12,6 @@ import net.minecraftforge.common.config.Configuration;
 import Talismans.config.TalismanConfig;
 import Talismans.crafting.CraftingManager;
 import Talismans.creativeTab.CreativeTabTalismans;
-import Talismans.event.EventCloakRender;
 import Talismans.gui.GuiHandler;
 import Talismans.init.DungeonLoot;
 import Talismans.init.ModBlocks;
@@ -60,17 +59,6 @@ public class Talismans {
 
 	@EventHandler
 	public void Init(FMLInitializationEvent event) {
-		// Loads Capes on the Client Side
-		if (event.getSide() == Side.CLIENT) {
-			MinecraftForge.EVENT_BUS.register(new EventCloakRender());
-			// Adds Dev Capes
-			EventCloakRender.addDevCapes();
-			// Adds Donator Capes
-			EventCloakRender.addCapes();
-			// Adds Icys Cape
-			EventCloakRender.addIcyCapes();
-
-		}
 		// Allows Talismans To Be Copyed
 		CraftingManager.registerRecipes(properties);
 		// Adds Talismans To DungeonLoot
