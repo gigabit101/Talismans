@@ -37,6 +37,13 @@ public class DungeonLoot {
 			ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(
 					new WeightedRandomChestContent(new ItemStack(
 							ModItems.Talisman, 1, 7), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.Talisman, 1, 8), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.TalismanBelt), 1, 1, 80));
+
 
 			// Adds Talismans To Pyramid DungeonLoot
 			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(
@@ -63,6 +70,12 @@ public class DungeonLoot {
 			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(
 					new WeightedRandomChestContent(new ItemStack(
 							ModItems.Talisman, 1, 7), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.Talisman, 1, 8), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.TalismanBelt), 1, 1, 80));
 
 			// Adds Talismans To Dungeon DungeonLoot
 			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(
@@ -89,6 +102,12 @@ public class DungeonLoot {
 			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(
 					new WeightedRandomChestContent(new ItemStack(
 							ModItems.Talisman, 1, 7), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.Talisman, 1, 8), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.TalismanBelt), 1, 1, 80));
 
 			// Adds Talismans To StrongHold DungeonLoot
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(
@@ -115,6 +134,12 @@ public class DungeonLoot {
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(
 					new WeightedRandomChestContent(new ItemStack(
 							ModItems.Talisman, 1, 7), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.Talisman, 1, 8), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.TalismanBelt), 1, 1, 80));
 
 			// Adds Talismans To Stronghold Library DungeonLoot
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(
@@ -140,7 +165,13 @@ public class DungeonLoot {
 							ModItems.Talisman, 1, 6), 1, 1, 8));
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(
 					new WeightedRandomChestContent(new ItemStack(
-							ModItems.Talisman, 1, 6), 1, 1, 8));
+							ModItems.Talisman, 1, 7), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.Talisman, 1, 8), 1, 1, 8));
+			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_LIBRARY).addItem(
+					new WeightedRandomChestContent(new ItemStack(
+							ModItems.TalismanBelt), 1, 1, 80));
 
 		}
 

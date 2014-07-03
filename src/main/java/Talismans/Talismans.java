@@ -32,7 +32,7 @@ import cpw.mods.fml.relauncher.Side;
 /**
  * @author Gigabit101
  */
-@Mod(modid = Modinfo.ID, name = Modinfo.NAME, version = Modinfo.Version, dependencies = "required-after:Baubles@,GbLib@")
+@Mod(modid = Modinfo.ID, name = Modinfo.NAME, version = Modinfo.Version, dependencies = "required-after:Baubles@")
 public class Talismans {
 	public static TalismanConfig properties;
 
@@ -61,6 +61,7 @@ public class Talismans {
 	public void Init(FMLInitializationEvent event) {
 		// Allows Talismans To Be Copyed
 		CraftingManager.registerRecipes(properties);
+		ModItems.CraftingBelts();
 		// Adds Talismans To DungeonLoot
 		DungeonLoot.registerDungeonLoot(properties);
 		// Adds Modblocks

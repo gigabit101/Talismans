@@ -2,7 +2,6 @@ package Talismans.items;
 
 import java.util.List;
 
-import cpw.mods.fml.common.eventhandler.Event;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -15,7 +14,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
 import Talismans.Talismans;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
@@ -23,35 +21,35 @@ import baubles.api.IBauble;
 /**
  * @author Gigabit101
  */
-public class ItemTalisman extends Item implements IBauble {
+public class ItemTalismanBelt extends Item implements IBauble {
 	// Names For Talismans Depending on Meta Data
-	public static final String[] types = new String[] { "Blank", "Dragon",
-			"Rabbit", "Bull", "Horse", "Fish", "Bat", "Chameleon", "Cow", "Icy","Cat" };
+	public static final String[] types = new String[] { "BeltNormal", "BeltDragon",
+			"BeltRabbit", "BeltBull", "BeltHorse", "BeltFish", "BeltBat", "BeltChameleon", "BeltCow", "BeltIcy" };
 	
 	private static final int par7 = 0;
 	private IIcon[] textures;
 
-	public ItemTalisman() {
+	public ItemTalismanBelt() {
 		super();
 		setHasSubtypes(true);
 		this.setCreativeTab(Talismans.tabsTalismans);
-		this.setUnlocalizedName("Itemtalisman Talisman");
+		this.setUnlocalizedName("ItemtalismanBelt TalismanBelt");
 		maxStackSize = 1;
 	}
 
 	@Override
-	// Tells Baubles What slot Talismans Can Be Equiped To
+	// Tells Baubles What slot Belts Can Be Equiped To
 	public BaubleType getBaubleType(ItemStack itemstack) {
-		return BaubleType.AMULET;
+		return BaubleType.BELT;
 	}
 
 	@Override
-	// Registers Textures For All Talismans
+	// Registers Textures For All Belts
 	public void registerIcons(IIconRegister iconRegister) {
 		textures = new IIcon[types.length];
 
 		for (int i = 0; i < types.length; ++i) {
-			textures[i] = iconRegister.registerIcon("talismans:" + types[i]);
+			textures[i] = iconRegister.registerIcon("talismans:" + "Belt");
 		}
 	}
 
@@ -76,17 +74,17 @@ public class ItemTalisman extends Item implements IBauble {
 		return super.getUnlocalizedName() + "." + types[meta];
 	}
 
-	// Adds Talismans SubItems To Creative Tab
+	// Adds Belts SubItems To Creative Tab
 	public void getSubItems(Item item, CreativeTabs creativeTabs, List list) {
 		for (int meta = 0; meta < types.length; ++meta) {
 			list.add(new ItemStack(item, 1, meta));
 		}
 	}
 
-	// Makes Items Name Blue
+	// Makes Items Name Purple
 	@Override
 	public EnumRarity getRarity(ItemStack par1ItemStack) {
-		return EnumRarity.rare;
+		return EnumRarity.epic;
 	}
 
 	// Adds Tooltips to Items
@@ -94,7 +92,7 @@ public class ItemTalisman extends Item implements IBauble {
 	public void addInformation(ItemStack iS, EntityPlayer par2EntityPlayer,
 			List par3List, boolean par4) {
 		if (iS.getItemDamage() == 0) {
-			par3List.add("Can Be Used To Copy Talismans");
+			par3List.add("Can Be Combined With A Talisman");
 		}
 		if (iS.getItemDamage() == 1) {
 			par3List.add("When equiped grants the ability ");
@@ -135,15 +133,12 @@ public class ItemTalisman extends Item implements IBauble {
 			par3List.add("When equiped grants the ability");
 			par3List.add("Of Having A beard like Icys");
 		}
-		if (iS.getItemDamage() == 10) {
-			par3List.add("When equiped grants the ability");
-			par3List.add("Of Taking No Fall Damage");
-		}
 
 	}
 
 	@Override
-	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {}
+	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
+	}
 
 	@Override
 	// Tells What Potion Effect to return
