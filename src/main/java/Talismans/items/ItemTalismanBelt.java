@@ -138,6 +138,10 @@ public class ItemTalismanBelt extends Item implements IBauble {
 
 	@Override
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
+		if (itemstack.getItemDamage() == 8
+				& !player.isPotionActive(Potion.wither)) {
+			player.removePotionEffect(Potion.wither.id);
+		}
 	}
 
 	@Override

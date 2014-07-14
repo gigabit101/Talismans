@@ -3,6 +3,7 @@ package Talismans.items;
 import java.util.List;
 
 import cpw.mods.fml.common.eventhandler.Event;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,7 +17,9 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
+
 import Talismans.Talismans;
+
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
 
@@ -143,7 +146,12 @@ public class ItemTalisman extends Item implements IBauble {
 	}
 
 	@Override
-	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {}
+	public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
+		if (itemstack.getItemDamage() == 8
+				& !player.isPotionActive(Potion.wither)) {
+			player.removePotionEffect(Potion.wither.id);
+		}
+	}
 
 	@Override
 	// Tells What Potion Effect to return
