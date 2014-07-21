@@ -203,19 +203,19 @@ public class ItemTalisman extends Item implements IBauble {
 	// Removes Potion effect on Unequip 
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
 		if (itemstack.getItemDamage() == 1)
-		 player.removePotionEffect(Potion.fireResistance.id);
+		    player.removePotionEffect(Potion.fireResistance.id);		
 		if (itemstack.getItemDamage() == 2)
-        player.removePotionEffect(Potion.jump.id);
+			player.removePotionEffect(Potion.jump.id);
 		if (itemstack.getItemDamage() == 3)
-     	player.removePotionEffect(Potion.digSpeed.id);
+     	    player.removePotionEffect(Potion.digSpeed.id);
 		if (itemstack.getItemDamage() == 4)
-		player.removePotionEffect(Potion.moveSpeed.id);
+		    player.removePotionEffect(Potion.moveSpeed.id);
 		if (itemstack.getItemDamage() == 5)
-		player.removePotionEffect(Potion.waterBreathing.id);
+		    player.removePotionEffect(Potion.waterBreathing.id);
 		if (itemstack.getItemDamage() == 6)
-		player.removePotionEffect(Potion.nightVision.id);
+		    player.removePotionEffect(Potion.nightVision.id);
 		if (itemstack.getItemDamage() == 7)
-		player.removePotionEffect(Potion.invisibility.id);
+		    player.removePotionEffect(Potion.invisibility.id);
 		if (itemstack.getItemDamage() == 9)
 			player.removePotionEffect(Potion.waterBreathing.id);
 		    player.removePotionEffect(Potion.nightVision.id);
