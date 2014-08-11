@@ -1,9 +1,8 @@
 package Talismans.creativeTab;
 
-import Talismans.init.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import Talismans.init.ModItems;
 
 /**
  * @author Gigabit101

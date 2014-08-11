@@ -1,9 +1,9 @@
 package Talismans.init;
 
-import Talismans.config.TalismanConfig;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
+import Talismans.config.TalismanConfig;
 
 /**
  * @author Gigabit101
@@ -43,7 +43,6 @@ public class DungeonLoot {
 			ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(
 					new WeightedRandomChestContent(new ItemStack(
 							ModItems.TalismanBelt), 1, 1, 80));
-
 
 			// Adds Talismans To Pyramid DungeonLoot
 			ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(

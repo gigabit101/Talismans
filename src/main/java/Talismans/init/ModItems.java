@@ -1,13 +1,10 @@
 package Talismans.init;
 
-import Talismans.config.TalismanConfig;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import Talismans.items.ItemTalisman;
 import Talismans.items.ItemTalismanBelt;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 /**
  * @author Gigabit101
@@ -21,7 +18,7 @@ public class ModItems {
 		// Registers Talisman As A Item
 		Talisman = new ItemTalisman();
 		GameRegistry.registerItem(Talisman, "Talisman");
-		//Registers Belts
+		// Registers Belts
 		TalismanBelt = new ItemTalismanBelt();
 		GameRegistry.registerItem(TalismanBelt, "TalismanBelt");
 
@@ -29,7 +26,7 @@ public class ModItems {
 
 	public static void CopyingTalismans() {
 		// Adds Recipes To Talismans
-		
+
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.Talisman, 2, 1),
 				new Object[] { new ItemStack(ModItems.Talisman, 1, 1),
 						ModItems.Talisman });
@@ -55,35 +52,34 @@ public class ModItems {
 				new Object[] { new ItemStack(ModItems.Talisman, 1, 8),
 						ModItems.Talisman });
 	}
-	
-	
-	public static void CraftingBelts(){
+
+	public static void CraftingBelts() {
 		// Adds Recipes To Belts
-		
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1, 1),
-				new Object[] { new ItemStack(ModItems.Talisman, 1, 1),
-						ModItems.TalismanBelt });
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1, 2),
-				new Object[] { new ItemStack(ModItems.Talisman, 1, 2),
-						ModItems.TalismanBelt });
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1, 3),
-				new Object[] { new ItemStack(ModItems.Talisman, 1, 3),
-						ModItems.TalismanBelt });
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1, 4),
-				new Object[] { new ItemStack(ModItems.Talisman, 1, 4),
-						ModItems.TalismanBelt });
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1, 5),
-				new Object[] { new ItemStack(ModItems.Talisman, 1, 5),
-						ModItems.TalismanBelt });
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1, 6),
-				new Object[] { new ItemStack(ModItems.Talisman, 1, 6),
-						ModItems.TalismanBelt });
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1, 7),
-				new Object[] { new ItemStack(ModItems.Talisman, 1, 7),
-						ModItems.TalismanBelt });
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1, 8),
-				new Object[] { new ItemStack(ModItems.Talisman, 1, 8),
-						ModItems.TalismanBelt });		
+
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1,
+				1), new Object[] { new ItemStack(ModItems.Talisman, 1, 1),
+				ModItems.TalismanBelt });
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1,
+				2), new Object[] { new ItemStack(ModItems.Talisman, 1, 2),
+				ModItems.TalismanBelt });
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1,
+				3), new Object[] { new ItemStack(ModItems.Talisman, 1, 3),
+				ModItems.TalismanBelt });
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1,
+				4), new Object[] { new ItemStack(ModItems.Talisman, 1, 4),
+				ModItems.TalismanBelt });
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1,
+				5), new Object[] { new ItemStack(ModItems.Talisman, 1, 5),
+				ModItems.TalismanBelt });
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1,
+				6), new Object[] { new ItemStack(ModItems.Talisman, 1, 6),
+				ModItems.TalismanBelt });
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1,
+				7), new Object[] { new ItemStack(ModItems.Talisman, 1, 7),
+				ModItems.TalismanBelt });
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.TalismanBelt, 1,
+				8), new Object[] { new ItemStack(ModItems.Talisman, 1, 8),
+				ModItems.TalismanBelt });
 	}
 
 }

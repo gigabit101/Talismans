@@ -1,6 +1,7 @@
 package Talismans.config;
 
 import java.io.File;
+
 /**
  * @author Gigabit101
  */

@@ -2,7 +2,6 @@ package Talismans.items;
 
 import java.util.List;
 
-import cpw.mods.fml.common.eventhandler.Event;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,11 +11,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
 import Talismans.Talismans;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
@@ -29,8 +25,9 @@ import baubles.common.lib.PlayerHandler;
 public class ItemTalisman extends Item implements IBauble {
 	// Names For Talismans Depending on Meta Data
 	public static final String[] types = new String[] { "Blank", "Dragon",
-			"Rabbit", "Bull", "Horse", "Fish", "Bat", "Chameleon", "Cow", "Icy","Cat" };
-	
+			"Rabbit", "Bull", "Horse", "Fish", "Bat", "Chameleon", "Cow",
+			"Icy", "Cat" };
+
 	private static final int par7 = 0;
 	private IIcon[] textures;
 
@@ -156,69 +153,75 @@ public class ItemTalisman extends Item implements IBauble {
 	@Override
 	// Tells What Potion Effect to return
 	public void onEquipped(ItemStack itemstack, EntityLivingBase player) {
-		
+
 		if (itemstack.getItemDamage() == 1
 				&& !player.isPotionActive(Potion.fireResistance)) {
 			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id,
 					Integer.MAX_VALUE, 1, true));
-		    }
-			if (itemstack.getItemDamage() == 2
-					&& !player.isPotionActive(Potion.jump)) {
-				player.addPotionEffect(new PotionEffect(Potion.jump.id, Integer.MAX_VALUE, 1, true));
-			}
-			if (itemstack.getItemDamage() == 3
-					&& !player.isPotionActive(Potion.digSpeed)) {
-				player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, Integer.MAX_VALUE, 1, true));
-			}
-			if (itemstack.getItemDamage() == 4
-					&& !player.isPotionActive(Potion.moveSpeed)) {
-				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, Integer.MAX_VALUE, 1, true));
-			}
-			if (itemstack.getItemDamage() == 5
-					&& !player.isPotionActive(Potion.waterBreathing)) {
-				player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,
-						Integer.MAX_VALUE, 1, true));
-			}
-			if (itemstack.getItemDamage() == 6
-					&& !player.isPotionActive(Potion.nightVision)) {
-				player.addPotionEffect(new PotionEffect(Potion.nightVision.id, Integer.MAX_VALUE, 1, true));
-			}
-			if (itemstack.getItemDamage() == 7
-					&& !player.isPotionActive(Potion.invisibility)) {
-				player.addPotionEffect(new PotionEffect(Potion.invisibility.id, Integer.MAX_VALUE, 1, true));
-			}
-			if (itemstack.getItemDamage() == 8
-					& !player.isPotionActive(Potion.wither)) {
-				player.removePotionEffect(Potion.wither.id);
-			}
-			if (itemstack.getItemDamage() == 9
-					&& !player.isPotionActive(Potion.waterBreathing)) {
-				player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, Integer.MAX_VALUE, 1, true));
-				player.addPotionEffect(new PotionEffect(Potion.nightVision.id, Integer.MAX_VALUE, 1, true));
-			}
 		}
-	
+		if (itemstack.getItemDamage() == 2
+				&& !player.isPotionActive(Potion.jump)) {
+			player.addPotionEffect(new PotionEffect(Potion.jump.id,
+					Integer.MAX_VALUE, 1, true));
+		}
+		if (itemstack.getItemDamage() == 3
+				&& !player.isPotionActive(Potion.digSpeed)) {
+			player.addPotionEffect(new PotionEffect(Potion.digSpeed.id,
+					Integer.MAX_VALUE, 1, true));
+		}
+		if (itemstack.getItemDamage() == 4
+				&& !player.isPotionActive(Potion.moveSpeed)) {
+			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id,
+					Integer.MAX_VALUE, 1, true));
+		}
+		if (itemstack.getItemDamage() == 5
+				&& !player.isPotionActive(Potion.waterBreathing)) {
+			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,
+					Integer.MAX_VALUE, 1, true));
+		}
+		if (itemstack.getItemDamage() == 6
+				&& !player.isPotionActive(Potion.nightVision)) {
+			player.addPotionEffect(new PotionEffect(Potion.nightVision.id,
+					Integer.MAX_VALUE, 1, true));
+		}
+		if (itemstack.getItemDamage() == 7
+				&& !player.isPotionActive(Potion.invisibility)) {
+			player.addPotionEffect(new PotionEffect(Potion.invisibility.id,
+					Integer.MAX_VALUE, 1, true));
+		}
+		if (itemstack.getItemDamage() == 8
+				& !player.isPotionActive(Potion.wither)) {
+			player.removePotionEffect(Potion.wither.id);
+		}
+		if (itemstack.getItemDamage() == 9
+				&& !player.isPotionActive(Potion.waterBreathing)) {
+			player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id,
+					Integer.MAX_VALUE, 1, true));
+			player.addPotionEffect(new PotionEffect(Potion.nightVision.id,
+					Integer.MAX_VALUE, 1, true));
+		}
+	}
 
 	@Override
-	// Removes Potion effect on Unequip 
+	// Removes Potion effect on Unequip
 	public void onUnequipped(ItemStack itemstack, EntityLivingBase player) {
 		if (itemstack.getItemDamage() == 1)
-		    player.removePotionEffect(Potion.fireResistance.id);		
+			player.removePotionEffect(Potion.fireResistance.id);
 		if (itemstack.getItemDamage() == 2)
 			player.removePotionEffect(Potion.jump.id);
 		if (itemstack.getItemDamage() == 3)
-     	    player.removePotionEffect(Potion.digSpeed.id);
+			player.removePotionEffect(Potion.digSpeed.id);
 		if (itemstack.getItemDamage() == 4)
-		    player.removePotionEffect(Potion.moveSpeed.id);
+			player.removePotionEffect(Potion.moveSpeed.id);
 		if (itemstack.getItemDamage() == 5)
-		    player.removePotionEffect(Potion.waterBreathing.id);
+			player.removePotionEffect(Potion.waterBreathing.id);
 		if (itemstack.getItemDamage() == 6)
-		    player.removePotionEffect(Potion.nightVision.id);
+			player.removePotionEffect(Potion.nightVision.id);
 		if (itemstack.getItemDamage() == 7)
-		    player.removePotionEffect(Potion.invisibility.id);
+			player.removePotionEffect(Potion.invisibility.id);
 		if (itemstack.getItemDamage() == 9)
 			player.removePotionEffect(Potion.waterBreathing.id);
-		    player.removePotionEffect(Potion.nightVision.id);
+		player.removePotionEffect(Potion.nightVision.id);
 	}
 
 	@Override
@@ -232,32 +235,39 @@ public class ItemTalisman extends Item implements IBauble {
 	public boolean canUnequip(ItemStack itemstack, EntityLivingBase player) {
 		return true;
 	}
-	
-	
+
 	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
-		InventoryBaubles baubles = PlayerHandler.getPlayerBaubles(par3EntityPlayer);
-		for(int i = 0; i < baubles.getSizeInventory(); i++) {
-			if(baubles.isItemValidForSlot(i, par1ItemStack)) {
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
+			EntityPlayer par3EntityPlayer) {
+		InventoryBaubles baubles = PlayerHandler
+				.getPlayerBaubles(par3EntityPlayer);
+		for (int i = 0; i < baubles.getSizeInventory(); i++) {
+			if (baubles.isItemValidForSlot(i, par1ItemStack)) {
 				ItemStack stackInSlot = baubles.getStackInSlot(i);
-				if(stackInSlot == null || ((IBauble) stackInSlot.getItem()).canUnequip(stackInSlot, par3EntityPlayer)) {
-					if(!par2World.isRemote) {
-						baubles.setInventorySlotContents(i, par1ItemStack.copy());
-						if(!par3EntityPlayer.capabilities.isCreativeMode)
-							par3EntityPlayer.inventory.setInventorySlotContents(par3EntityPlayer.inventory.currentItem, null);
+				if (stackInSlot == null
+						|| ((IBauble) stackInSlot.getItem()).canUnequip(
+								stackInSlot, par3EntityPlayer)) {
+					if (!par2World.isRemote) {
+						baubles.setInventorySlotContents(i,
+								par1ItemStack.copy());
+						if (!par3EntityPlayer.capabilities.isCreativeMode)
+							par3EntityPlayer.inventory
+									.setInventorySlotContents(
+											par3EntityPlayer.inventory.currentItem,
+											null);
 					}
 
 					onEquipped(par1ItemStack, par3EntityPlayer);
 
-					if(stackInSlot != null) {
-						((IBauble) stackInSlot.getItem()).onUnequipped(stackInSlot, par3EntityPlayer);
+					if (stackInSlot != null) {
+						((IBauble) stackInSlot.getItem()).onUnequipped(
+								stackInSlot, par3EntityPlayer);
 						return stackInSlot.copy();
 					}
 					break;
 				}
 			}
 		}
-
 
 		return par1ItemStack;
 	}

@@ -1,9 +1,9 @@
 package Talismans.crafting;
 
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.common.registry.GameRegistry;
 import Talismans.config.TalismanConfig;
 import Talismans.init.ModItems;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * @author Gigabit101

@@ -1,8 +1,8 @@
 package Talismans.init;
 
+import net.minecraft.block.Block;
 import Talismans.block.BlockTalismanDuplicator;
 import Talismans.block.TileTalismanDuplicator;
-import net.minecraft.block.Block;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModBlocks {
