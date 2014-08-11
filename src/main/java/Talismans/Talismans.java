@@ -3,21 +3,13 @@ package Talismans;
 import java.io.File;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.common.DungeonHooks;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
 import Talismans.config.TalismanConfig;
 import Talismans.crafting.CraftingManager;
 import Talismans.creativeTab.CreativeTabTalismans;
 import Talismans.gui.GuiHandler;
 import Talismans.init.DungeonLoot;
-import Talismans.init.ModBlocks;
 import Talismans.init.ModItems;
 import Talismans.lib.Modinfo;
-import Talismans.proxies.ClientProxy;
 import Talismans.proxies.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -27,7 +19,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.relauncher.Side;
 
 /**
  * @author Gigabit101
@@ -66,10 +57,10 @@ public class Talismans {
 		ModItems.CraftingBelts();
 		// Adds Talismans To DungeonLoot
 		DungeonLoot.registerDungeonLoot(properties);
-//		// Adds Modblocks
-//		ModBlocks.init();
-//		// Adds TileEntitys
-//		ModBlocks.registerTileEntitys();
+		// // Adds Modblocks
+		// ModBlocks.init();
+		// // Adds TileEntitys
+		// ModBlocks.registerTileEntitys();
 		// Registers Gui Handler
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 

@@ -1,9 +1,5 @@
 package Talismans.block;
 
-import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
-import cpw.mods.fml.common.registry.GameRegistry;
-import Talismans.Talismans;
-import Talismans.creativeTab.CreativeTabTalismans;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -11,6 +7,8 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import Talismans.Talismans;
+import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
 public class BlockTalismanDuplicator extends BlockContainer {
 
