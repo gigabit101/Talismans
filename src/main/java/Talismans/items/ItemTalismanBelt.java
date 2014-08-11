@@ -11,12 +11,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.MathHelper;
+import net.minecraft.world.World;
 import Talismans.Talismans;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
+import baubles.common.container.InventoryBaubles;
+import baubles.common.lib.PlayerHandler;
 
 /**
  * @author Gigabit101
@@ -222,6 +223,34 @@ public class ItemTalismanBelt extends Item implements IBauble {
 	// Player can UnEquip Talismans
 	public boolean canUnequip(ItemStack itemstack, EntityLivingBase player) {
 		return true;
+	}
+	
+	@Override
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {
+		InventoryBaubles baubles = PlayerHandler.getPlayerBaubles(par3EntityPlayer);
+		for(int i = 0; i < baubles.getSizeInventory(); i++) {
+			if(baubles.isItemValidForSlot(i, par1ItemStack)) {
+				ItemStack stackInSlot = baubles.getStackInSlot(i);
+				if(stackInSlot == null || ((IBauble) stackInSlot.getItem()).canUnequip(stackInSlot, par3EntityPlayer)) {
+					if(!par2World.isRemote) {
+						baubles.setInventorySlotContents(i, par1ItemStack.copy());
+						if(!par3EntityPlayer.capabilities.isCreativeMode)
+							par3EntityPlayer.inventory.setInventorySlotContents(par3EntityPlayer.inventory.currentItem, null);
+					}
+
+					onEquipped(par1ItemStack, par3EntityPlayer);
+
+					if(stackInSlot != null) {
+						((IBauble) stackInSlot.getItem()).onUnequipped(stackInSlot, par3EntityPlayer);
+						return stackInSlot.copy();
+					}
+					break;
+				}
+			}
+		}
+
+
+		return par1ItemStack;
 	}
 
 }
