@@ -36,7 +36,7 @@ dependencies {
         f.mkdir()
     }
 	println("  Downloading dependencies!")
-	grabDep('gbl', 'https://dl.dropboxusercontent.com/u/47135879/Baubles-1.7.10-1.0.1.4.jar')
+	grabDep('gbl', 'https://dl.dropboxusercontent.com/u/47135879/Baubles-deobf-1.7.10-1.0.1.4.jar')
 
 	
 	println("  Adding dependencies!")
