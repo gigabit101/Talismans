@@ -21,6 +21,29 @@ version = "1.1.4"
 group= "com.gigabit101.talismans" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Talismans"
 
+def grabDep(name, url){
+	ant.get(src: url, dest: 'dep')
+	file("dep/" + url.substring(url.lastIndexOf("/"))).renameTo(file("dep/" + name + ".jar"))
+}
+
+dependencies {
+    def f = new File('dep/')
+    if(f.exists()){
+        f.delete()
+    }
+    f.mkdirs()
+    if(!f.exists()){
+        f.mkdir()
+    }
+	println("  Downloading dependencies!")
+	grabDep('gbl', 'https://dl.dropboxusercontent.com/u/47135879/Baubles-1.7.10-1.0.1.4.jar')
+
+	
+	println("  Adding dependencies!")
+    compile files("dep/gbl.jar")
+	println("  Finished adding dependencies!")
+}
+
 minecraft {
     version = "1.7.10-10.13.0.1200"
     assetDir = "eclipse/assets"
