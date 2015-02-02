@@ -1,5 +1,6 @@
 Talismans 
-Talismans is a WIP Minecraft
+Talismans is finished Talismans 2 is released and avalible for minecraft 1.7.10 and 1.8.
+http://minecraft.curseforge.com/mc-mods/224434-talismans-2
 
 Still In Beta, New things coming.
 NO ETAS 
