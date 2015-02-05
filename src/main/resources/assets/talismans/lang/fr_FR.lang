@@ -1,0 +1,43 @@
+
+# Item localizations
+item.Itemtalisman Talisman.Blank.name=Talisman vide
+item.Itemtalisman Talisman.Dragon.name=Talisman du dragon
+item.Itemtalisman Talisman.Rabbit.name=Talisman du lapin
+item.Itemtalisman Talisman.Bull.name=Talisman du taureau
+item.Itemtalisman Talisman.Horse.name=Talisman du cheval
+item.Itemtalisman Talisman.Fish.name=Talisman du poisson
+item.Itemtalisman Talisman.Bat.name=Talisman de la chauve-souris
+item.Itemtalisman Talisman.Chameleon.name=Talisman du caméléon
+item.Itemtalisman Talisman.Cow.name=Talisman de la vache
+item.Itemtalisman Talisman.Icy.name=Talisman glacial
+
+item.ItemtalismanBelt TalismanBelt.BeltNormal.name= Ceinture normale
+item.ItemtalismanBelt TalismanBelt.BeltDragon.name= Ceinture du dragon
+item.ItemtalismanBelt TalismanBelt.BeltRabbit.name= Ceinture du lapin
+item.ItemtalismanBelt TalismanBelt.BeltBull.name= Ceinture du taureau
+item.ItemtalismanBelt TalismanBelt.BeltHorse.name= Ceinture du cheval
+item.ItemtalismanBelt TalismanBelt.BeltFish.name= Ceinture du poison
+item.ItemtalismanBelt TalismanBelt.BeltBat.name= Ceinture de la chauve-souris
+item.ItemtalismanBelt TalismanBelt.BeltChameleon.name= Ceinture du caméléon
+item.ItemtalismanBelt TalismanBelt.BeltCow.name= Ceinture de la vache
+item.ItemtalismanBelt TalismanBelt.BeltIcy.name= Ceinture glaciale
+
+
+
+
+
+
+
+
+
+
+# Block localizations
+tile.Blocktalismans TalismansDupe.name= Duplicateur de talisman 
+
+
+# GUI localizations
+
+
+# Creative Tab localizations
+itemGroup.Talismans=Talismans
+
